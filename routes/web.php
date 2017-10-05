@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//middleware
+Route::group(['middleware' => ['web']], function()
+{
+    Route::get('/', 'TestController@index');
+});
